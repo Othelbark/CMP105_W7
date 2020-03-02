@@ -10,6 +10,7 @@ Player::Player()
 
 Player::~Player()
 {
+	delete bullet;
 }
 
 void Player::handleInput(float dt)
@@ -40,7 +41,7 @@ void Player::update(float dt)
 
 Bullet* Player::spawn(sf::Vector2f pos)
 {
-	Bullet newBullet;
-	newBullet.setPosition(pos);
-	return &newBullet;
+	Bullet* newBullet = new Bullet;
+	newBullet->setPosition(pos);
+	return newBullet;
 }
