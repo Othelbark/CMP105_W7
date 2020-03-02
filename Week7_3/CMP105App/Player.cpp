@@ -4,11 +4,14 @@ Player::Player()
 {
 	setPosition(200, 200);
 	setSize(sf::Vector2f(100, 100));
+
+	bullet = new Bullet;
 }
 
 
 Player::~Player()
 {
+	delete bullet;
 }
 
 void Player::handleInput(float dt)
